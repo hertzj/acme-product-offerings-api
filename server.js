@@ -8,8 +8,12 @@ const {
     syncAndSeed,
     Product,
     Company,
-    // Offering
+    Offering
 } = require('./db.js');
+
+app.get('/', (req, res, next) => {
+    res.sendFile(path.join(__dirname, './index.html'));
+})
 
 app.get('/api/products', (req, res, next) => {
     Product.findAll()
@@ -29,13 +33,13 @@ app.get('/api/companies', (req, res, next) => {
 });
 
 
-// app.get('/api/offering', (req, res, next) => {
-//     Offering.findAll()
-//         .then(offerings => {
-//             res.send(offerings)
-//         })
-//         .catch(next)
-// });
+app.get('/api/offerings', (req, res, next) => {
+    Offering.findAll()
+        .then(offerings => {
+            res.send(offerings)
+        })
+        .catch(next)
+});
 
 app.listen(PORT, () => {
     console.log('things are going well')
