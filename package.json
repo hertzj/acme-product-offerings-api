@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/hertzj/acme-product-offerings-api#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "inflection": "^1.12.0",
     "pg": "^7.12.1",
     "sequelize": "^5.21.2"
